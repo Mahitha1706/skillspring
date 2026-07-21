@@ -1,0 +1,18 @@
+@Question1_HostAddress = http://localhost:5000
+
+### 1. Login to generate JWT Token
+POST {{Question1_HostAddress}}/api/auth/login
+Content-Type: application/json
+
+{
+  "username": "testuser",
+  "password": "password123"
+}
+
+### 2. Access Secure Endpoint (Without Bearer Token - Should return 401 Unauthorized)
+GET {{Question1_HostAddress}}/api/secure/data
+
+### 3. Access Secure Endpoint (With Bearer Token)
+# Replace YOUR_JWT_TOKEN with the token returned by the login endpoint above
+GET {{Question1_HostAddress}}/api/secure/data
+Authorization: Bearer YOUR_JWT_TOKEN
