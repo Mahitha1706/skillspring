@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>jQuery Complete Exercises</title>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+<style>
+
+body{
+    font-family:Arial,sans-serif;
+    margin:20px;
+}
+
+section{
+    margin-bottom:40px;
+    padding:20px;
+    border:1px solid #ccc;
+    border-radius:10px;
+}
+
+button{
+    padding:8px 15px;
+    margin:5px;
+    cursor:pointer;
+}
+
+.box{
+    width:100px;
+    height:100px;
+    background:skyblue;
+    margin:10px;
+    display:inline-block;
+}
+
+#colorBox{
+    width:200px;
+    height:200px;
+    border:2px solid black;
+    margin-top:10px;
+}
+
+#eventBox{
+    width:300px;
+    padding:20px;
+    border:2px solid black;
+    text-align:center;
+}
+
+</style>
+</head>
+<body>
+
+<h1>jQuery Complete Exercise Solutions</h1>
+
+<!-- Exercise 1 -->
+<section>
+    <h2>Exercise 1: jQuery Inclusion</h2>
+
+    <p id="helloText">Hello World!</p>
+
+    <button id="logBtn">
+        Log Hello World
+    </button>
+</section>
+
+<!-- Exercise 2 -->
+<section>
+
+    <h2 id="heading">
+        Original Heading
+    </h2>
+
+    <p id="para1">
+        First Paragraph
+    </p>
+
+    <p id="para2">
+        Second Paragraph
+    </p>
+
+    <button id="hidePara">
+        Hide Paragraph
+    </button>
+
+</section>
+
+<!-- Exercise 3 -->
+<section>
+
+    <h2>Exercise 3: jQuery Methods</h2>
+
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+
+    <br>
+
+    <button id="hideBox">Hide</button>
+    <button id="showBox">Show</button>
+    <button id="fadeOutBox">Fade Out</button>
+    <button id="fadeInBox">Fade In</button>
+    <button id="toggleBox">Toggle</button>
+
+</section>
+
+<!-- Exercise 4 -->
+<section>
+
+    <h2>Exercise 4: DOM Manipulation</h2>
+
+    <input
+        type="text"
+        id="itemInput"
+        placeholder="Enter Item">
+
+    <button id="addItem">
+        Add Item
+    </button>
+
+    <button id="removeAll">
+        Remove All
+    </button>
+
+    <ul id="itemList"></ul>
+
+</section>
+
+<!-- Exercise 5 -->
+<section>
+
+    <h2>Exercise 5: Events</h2>
+
+    <button id="colorBtn">
+        Change Color
+    </button>
+
+    <div id="colorBox"></div>
+
+</section>
+
+<!-- Exercise 6 -->
+<section>
+
+    <h2>Exercise 6: Event Helpers</h2>
+
+    <div id="eventBox">
+        Hover, Click or Double Click Me
+    </div>
+
+    <br><br>
+
+    <input
+        type="text"
+        id="keypressInput"
+        placeholder="Press Any Key">
+
+    <p id="message"></p>
+
+</section>
+
+<script>
+
+$(document).ready(function(){
+
+    console.log("jQuery Loaded Successfully");
+
+    /* Exercise 1 */
+
+    $("#logBtn").click(function(){
+
+        console.log(
+            $("#helloText").text()
+        );
+
+        alert(
+            $("#helloText").text()
+        );
+
+    });
+
+    /* Exercise 2 */
+
+    $("#heading").text(
+        "Welcome to jQuery"
+    );
+
+    $("#hidePara").click(function(){
+
+        $("#para2").hide();
+
+    });
+
+    /* Exercise 3 */
+
+    $("#hideBox").click(function(){
+
+        $(".box").hide();
+
+    });
+
+    $("#showBox").click(function(){
+
+        $(".box").show();
+
+    });
+
+    $("#fadeOutBox").click(function(){
+
+        $(".box").fadeOut();
+
+    });
+
+    $("#fadeInBox").click(function(){
+
+        $(".box").fadeIn();
+
+    });
+
+    $("#toggleBox").click(function(){
+
+        $(".box")
+        .slideUp()
+        .delay(1000)
+        .slideDown();
+
+    });
+
+    /* Exercise 4 */
+
+    $("#addItem").click(function(){
+
+        let value =
+        $("#itemInput").val();
+
+        if(value !== ""){
+
+            $("#itemList").append(
+                "<li>" +
+                value +
+                "</li>"
+            );
+
+            $("#itemInput").val("");
+
+        }
+
+    });
+
+    $("#removeAll").click(function(){
+
+        $("#itemList").empty();
+
+    });
+
+    /* Exercise 5 */
+
+    $("#colorBtn").click(function(){
+
+        $("#colorBox").css(
+            "background",
+            "red"
+        );
+
+    });
+
+    $("#colorBtn").dblclick(function(){
+
+        $("#colorBox").css(
+            "background",
+            "white"
+        );
+
+    });
+
+    /* Exercise 6 */
+
+    $("#eventBox").click(function(){
+
+        $(this).text(
+            "Single Click Detected"
+        );
+
+    });
+
+    $("#eventBox").dblclick(function(){
+
+        $(this).css(
+            "background",
+            "yellow"
+        );
+
+        $(this).text(
+            "Double Click Detected"
+        );
+
+    });
+
+    $("#eventBox").mouseenter(function(){
+
+        $(this).css(
+            "background",
+            "lightgreen"
+        );
+
+    });
+
+    $("#eventBox").mouseleave(function(){
+
+        $(this).css(
+            "background",
+            "white"
+        );
+
+    });
+
+    $("#keypressInput").keypress(function(event){
+
+        $("#message").text(
+            "Key Pressed : " +
+            event.key
+        );
+
+    });
+
+});
+
+</script>
+
+</body>
+</html>
