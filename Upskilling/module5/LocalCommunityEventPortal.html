@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Local Community Event Portal</title>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="../css/LocalCommunityEventPortal.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#events">Events</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#register">Register</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home">
+
+        <div id="welcomeBanner">
+            Welcome to Local Community Event Portal
+            <span style="color:red;font-weight:bold;">
+                Limited Time Registration Offer!
+            </span>
+        </div>
+
+    </section>
+
+    <!-- Events Section -->
+    <section id="events">
+
+        <h2 id="mainHeader">Upcoming Community Events</h2>
+
+        <div class="eventCard">
+            <h3>Art Festival</h3>
+            <p>Explore creativity through community art exhibitions.</p>
+        </div>
+
+        <div class="eventCard">
+            <h3>Dance Competition</h3>
+            <p>Showcase talent and celebrate culture.</p>
+        </div>
+
+        <div class="eventCard">
+            <h3>Music Night</h3>
+            <p>Enjoy live performances from local artists.</p>
+        </div>
+
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery">
+
+        <h2>Event Gallery</h2>
+
+        <table>
+
+            <tr>
+
+                <td>
+                    <img src="../images/art.png"
+                         alt="Art Festival"
+                         title="Art Festival"
+                         class="gallery-img">
+
+                    <p>Art Festival</p>
+                </td>
+
+                <td>
+                    <img src="../images/dance.png"
+                         alt="Dance Event"
+                         title="Dance Event"
+                         class="gallery-img">
+
+                    <p>Dance Event</p>
+                </td>
+
+                <td>
+                    <img src="../images/food.png"
+                         alt="Food Fair"
+                         title="Food Fair"
+                         class="gallery-img">
+
+                    <p>Food Fair</p>
+                </td>
+
+            </tr>
+
+            <tr>
+
+                <td>
+                    <img src="../images/musical.png"
+                         alt="Music Show"
+                         title="Music Show"
+                         class="gallery-img">
+
+                    <p>Music Show</p>
+                </td>
+
+                <td>
+                    <img src="../images/sports.png"
+                         alt="Sports Event"
+                         title="Sports Event"
+                         class="gallery-img">
+
+                    <p>Sports Event</p>
+                </td>
+
+                <td>
+                    <img src="../images/workshop.png"
+                         alt="Workshop"
+                         title="Workshop"
+                         class="gallery-img">
+
+                    <p>Workshop</p>
+                </td>
+
+            </tr>
+
+        </table>
+
+    </section>
+
+    <!-- Registration Section -->
+    <section id="register">
+
+        <h2>Event Registration</h2>
+
+        <form id="registrationForm">
+
+            <input
+                type="text"
+                id="name"
+                placeholder="Enter Name"
+                required
+                autofocus>
+
+            <input
+                type="email"
+                id="email"
+                placeholder="Enter Email"
+                required>
+
+            <input
+                type="tel"
+                id="phone"
+                placeholder="Enter Phone Number"
+                onblur="validatePhone()"
+                required>
+
+            <input
+                type="date"
+                required>
+
+            <select
+                id="eventType"
+                onchange="showFee()">
+
+                <option value="">
+                    Select Event
+                </option>
+
+                <option value="Art">
+                    Art Festival
+                </option>
+
+                <option value="Dance">
+                    Dance Competition
+                </option>
+
+                <option value="Music">
+                    Music Night
+                </option>
+
+                <option value="Sports">
+                    Sports Event
+                </option>
+
+            </select>
+
+            <p id="feeDisplay">
+                Event Fee:
+            </p>
+
+            <textarea
+                id="feedback"
+                placeholder="Enter Feedback">
+            </textarea>
+
+            <p id="charCount">
+                0 Characters
+            </p>
+
+            <button type="submit">
+                Register
+            </button>
+
+        </form>
+
+        <output id="outputMessage"></output>
+
+    </section>
+
+    <!-- Video Section -->
+    <section>
+
+        <h2>Community Event Invitation</h2>
+
+        <video
+            width="600"
+            controls
+            oncanplay="videoReady()">
+
+            <source src="../media/event.mp4"
+                    type="video/mp4">
+
+        </video>
+
+        <p id="videoStatus"></p>
+
+    </section>
+
+    <!-- Geolocation Section -->
+    <section>
+
+        <h2>Find Nearby Events</h2>
+
+        <button onclick="findLocation()">
+            Find Nearby Events
+        </button>
+
+        <p id="location"></p>
+
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+
+        <h2>Contact Us</h2>
+
+        <p>Email: communityportal@gmail.com</p>
+
+        <p>Phone: +91 9876543210</p>
+
+    </section>
+
+    <!-- Footer -->
+    <footer>
+
+        <p>
+            © 2026 Local Community Event Portal.
+            All Rights Reserved.
+        </p>
+
+        <button onclick="clearPreferences()">
+            Clear Preferences
+        </button>
+
+    </footer>
+
+    <!-- External JavaScript -->
+    <script src="../javascript/LocalCommunityEventPortal.js"></script>
+
+</body>
+</html>
