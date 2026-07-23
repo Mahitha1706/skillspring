@@ -1,0 +1,291 @@
+/* =========================
+   GLOBAL RESET
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+/* =========================
+   BODY STYLES
+========================= */
+
+body{
+    font-family:'Segoe UI',sans-serif;
+    background:#f4f7fc;
+    color:#333;
+    line-height:1.6;
+}
+
+/* =========================
+   NAVIGATION
+========================= */
+
+nav{
+    background:linear-gradient(135deg,#007bff,#0056b3);
+    padding:15px;
+    display:flex;
+    justify-content:center;
+    gap:25px;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    font-size:18px;
+    font-weight:600;
+    transition:0.3s;
+}
+
+nav a:hover{
+    color:#ffd700;
+    transform:translateY(-2px);
+}
+
+nav a:active{
+    color:red;
+}
+
+nav a:visited{
+    color:white;
+}
+
+/* =========================
+   SECTION
+========================= */
+
+section{
+    padding:40px 8%;
+}
+
+/* =========================
+   WELCOME BANNER
+========================= */
+
+#welcomeBanner{
+    background:#007bff;
+    color:white;
+    text-align:center;
+    padding:25px;
+    border-radius:10px;
+    font-size:28px;
+    font-weight:bold;
+    margin:20px 0;
+}
+
+/* =========================
+   HEADINGS
+========================= */
+
+h2{
+    text-align:center;
+    margin-bottom:20px;
+    color:#0056b3;
+    text-transform:uppercase;
+    letter-spacing:2px;
+}
+
+/* =========================
+   EVENT CARDS
+========================= */
+
+.eventCard{
+    background:white;
+    border:1px solid #ddd;
+    border-radius:12px;
+    padding:20px;
+    margin-bottom:20px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.1);
+    transition:0.3s;
+}
+
+.eventCard:hover{
+    transform:translateY(-5px);
+}
+
+.eventCard h3{
+    color:#007bff;
+}
+
+.eventCard p{
+    margin-top:10px;
+}
+
+/* =========================
+   TABLE GALLERY
+========================= */
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+td{
+    text-align:center;
+    padding:20px;
+}
+
+.gallery-img{
+    width:250px;
+    height:180px;
+    border:4px solid #007bff;
+    border-radius:12px;
+    object-fit:cover;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.gallery-img:hover{
+    transform:scale(1.05);
+}
+
+table tr:nth-child(even){
+    background:#f9f9f9;
+}
+
+/* =========================
+   FORM
+========================= */
+
+form{
+    max-width:700px;
+    margin:auto;
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.15);
+}
+
+input,
+select,
+textarea{
+    width:100%;
+    padding:12px;
+    margin:10px 0;
+    border:1px solid #ccc;
+    border-radius:8px;
+    font-size:16px;
+}
+
+input:focus,
+select:focus,
+textarea:focus{
+    outline:3px solid #007bff;
+}
+
+textarea{
+    resize:vertical;
+    min-height:120px;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+button{
+    background:#007bff;
+    color:white;
+    border:none;
+    padding:12px 20px;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:16px;
+    transition:0.3s;
+}
+
+button:hover{
+    background:#0056b3;
+}
+
+/* =========================
+   OUTPUTS
+========================= */
+
+#feeDisplay,
+#charCount,
+#outputMessage,
+#videoStatus,
+#location{
+    margin-top:10px;
+    font-weight:bold;
+    color:#0056b3;
+}
+
+/* =========================
+   VIDEO
+========================= */
+
+video{
+    display:block;
+    margin:auto;
+    border-radius:12px;
+    max-width:100%;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    background:#222;
+    color:white;
+    text-align:center;
+    padding:25px;
+    margin-top:30px;
+}
+
+footer button{
+    margin-top:10px;
+}
+
+/* =========================
+   MULTI COLUMN NEWS
+========================= */
+
+.news-section{
+    column-count:2;
+    column-gap:30px;
+    column-rule:1px solid gray;
+}
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+@media(max-width:768px){
+
+    nav{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    #welcomeBanner{
+        font-size:20px;
+    }
+
+    .gallery-img{
+        width:100%;
+        height:auto;
+    }
+
+    form{
+        width:100%;
+    }
+
+    h2{
+        font-size:20px;
+    }
+
+    body{
+        font-size:14px;
+    }
+
+    .news-section{
+        column-count:1;
+    }
+}
